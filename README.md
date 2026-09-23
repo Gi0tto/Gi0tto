@@ -1,6 +1,4 @@
-<img align="right" width="150" src="https://media.giphy.com/media/LPFNd1AJBoYcVUExmE/giphy.gif" alt="waving lizard">
-
-<h1>Hi, I'm Nichita</h1>
+<h1>Hi, I'm Nichita <img src="./profile/lizard.gif" width="90" alt="waving lizard"></h1>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/nichita-briculschi-aaa835274/">
