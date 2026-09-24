@@ -31,31 +31,11 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # The streak service is shared and sometimes down: on failure the
-      # old card stays in place instead of a broken image.
-      - name: Generate streak card
-        run: |
-          curl -sS --fail --max-time 60 -o /tmp/streak.svg \
-            "https://streak-stats.demolab.com/?user=${{ github.repository_owner }}&background=22272E&border=444C56&stroke=444C56&ring=00AEFF&fire=00AEFF&currStreakNum=ADBAC7&sideNums=ADBAC7&currStreakLabel=00AEFF&sideLabels=00AEFF&dates=768390" \
-            && grep -q '<svg' /tmp/streak.svg && mv /tmp/streak.svg profile/streak.svg \
-            || echo "::warning::streak card not updated"
-
-      - name: Generate activity graph
-        run: python3 .github/scripts/activity_graph.py ${{ github.repository_owner }} profile/activity.svg
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate 3D contribution graph
-        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-
       - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg profile-3d-contrib
+          git add profile/*.svg
           git commit -m "Update README cards" || exit 0
           git push
 

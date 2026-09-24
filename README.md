@@ -47,20 +47,7 @@ When I'm not building, I'm into sports, football above all.
 ## GitHub stats
 
 <img src="./profile/stats.svg" height="170" alt="GitHub stats" />
-<img src="./profile/streak.svg" height="170" alt="Contribution streak" />
 
 <img src="./profile/top-langs.svg" alt="Most used languages" />
 
-<img src="./profile/activity.svg" width="100%" alt="Contributions in the last 31 days" />
-
 </div>
-
-<details>
-<summary><b>3D contribution graph</b></summary>
-<br>
-<div align="center">
-
-<img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="3D contribution graph" />
-
-</div>
-</details>
